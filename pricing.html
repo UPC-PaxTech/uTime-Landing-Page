@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand d-lg-none " href="#">Navbar</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">About Us</a></li>
+                        <li><a class="dropdown-item" href="#">Contact us</a></li>
+                    </ul>
+                </li>
+            
+            </ul>
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand mx-auto d-none d-lg-block" href="#">Navbar</a>
+                </li>
+            </ul>
+            <div class="d-flex flex-column flex-lg-row gap-2">
+                <button type="button" class="btn btn-primary">Sign in</button>
+                <button type="button" class="btn btn-warning ms-lg-3">Register</button>
+            </div>
+        </div>
+    
+    </div>
+</nav>
+
+<section class="text-center py-5">
+    <div class="container-fluid px-4"> <!--clamp(min, prefered, max)-->
+        <h1 class="fw-bold text-wrap py-5" style="font-size: clamp(2rem, 6vw, 10rem); line-height: 1.2;">
+            PRICING
+        </h1>
+    </div>
+</section>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 text-center px-5">
+    
+    <!-- Essential Plan -->
+    <div class="col">
+        <div class="card h-100 shadow rounded-4 border-0 p-3">
+            <div class="card-body">
+                <h4 class="fw-bold">Essential</h4>
+                <p class="text-muted">Start simple and stay organized</p>
+                <ul class="list-unstyled text-start mt-4 mb-4">
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                </ul>
+                <h5 class="fw-bold text-primary">Free</h5>
+            </div>
+            <div class="card-footer border-0 bg-transparent">
+                <button class="btn btn-light rounded-pill px-4">Learn more..</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ProStyle Plan -->
+    <div class="col">
+        <div class="card h-100 shadow rounded-4 border-0 p-3">
+            <div class="card-body">
+                <h4 class="fw-bold">ProStyle</h4>
+                <p class="text-muted">Level up your salon with smart tools</p>
+                <ul class="list-unstyled text-start mt-4 mb-4">
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                </ul>
+                <h5 class="fw-bold text-primary">s/69.9 x month</h5>
+            </div>
+            <div class="card-footer border-0 bg-transparent">
+                <button class="btn btn-light rounded-pill px-4">Learn more..</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Deluxe Studio Plan -->
+    <div class="col">
+        <div class="card h-100 shadow rounded-4 border-0 p-3">
+            <div class="card-body">
+                <h4 class="fw-bold">Deluxe Studio</h4>
+                <p class="text-muted">All-in-one power for premium salons</p>
+                <ul class="list-unstyled text-start mt-4 mb-4">
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                    <li>✅ lorem ipsum dolor sit</li>
+                </ul>
+                <h5 class="fw-bold text-primary">s/129.9 x month</h5>
+            </div>
+            <div class="card-footer border-0 bg-transparent">
+                <button class="btn btn-light rounded-pill px-4">Learn more..</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container py-5">
+    <!-- Heading -->
+    <h2 class="text-center fw-bold">Essential</h2>
+    <p class="text-center text-muted mb-5">
+        Perfect for small salons beginning their digital journey. All the core tools to manage appointments
+        and connect with clients online.
+    </p>
+    
+    <!-- Row Layout -->
+    <div class="row align-items-center justify-content-center">
+        
+        <!-- Left: Image Placeholder -->
+        <div class="col-md-4 text-center">
+            <div class="border rounded bg-light" style="width: 200px; height: 200px; margin: 0 auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 200">
+                    <line x1="0" y1="0" x2="200" y2="200" stroke="#aaa" stroke-width="2"/>
+                    <line x1="200" y1="0" x2="0" y2="200" stroke="#aaa" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Center: Feature List -->
+        <div class="col-md-5">
+            <div class="d-flex">
+                <div class="me-3 fw-bold text-end pe-2" style="writing-mode: vertical-rl; text-orientation: mixed;">
+                    FEATURES
+                </div>
+                <ul class="list-unstyled">
+                    <li class="mb-2 text-success">✔ Lorem ipsum dolor sit</li>
+                    <li class="mb-2 text-success">✔ Lorem ipsum dolor sit</li>
+                    <li class="mb-2 text-success">✔ Lorem ipsum dolor sit</li>
+                    <li class="mb-2 text-success">✔ Lorem ipsum dolor sit</li>
+                    <li class="mb-2 text-danger">✘ Lorem ipsum dolor sit</li>
+                    <li class="mb-2 text-danger">✘ Lorem ipsum dolor sit</li>
+                    <li class="mb-2 text-danger">✘ Lorem ipsum dolor sit</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right: Pricing and Buttons -->
+        <div class="col-md-3 text-center">
+            <h4 class="text-primary fw-bold">Free</h4>
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-outline-secondary rounded-pill">Schedule a demo</button>
+                <button class="btn btn-secondary rounded-pill">I want it!</button>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+
+<footer class="px-3 py-3 my-4 border-top">
+    <ul class="nav justify-content-center">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Complaints book</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Terms & Conditions</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Cookies Policy</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Help</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Frequent Questions</a></li>
+    </ul>
+</footer>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
