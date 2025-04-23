@@ -12,7 +12,7 @@
     
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <a class="navbar-brand d-lg-none " href="index.html">Navbar</a>
+            <a class="navbar-brand d-lg-none " href="../index.html">Navbar</a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pricing.html">Pricing</a>
+                    <a class="nav-link" href="../pricing.html">Pricing</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,80 +53,78 @@
 <section class="text-center py-5">
     <div class="container-fluid px-4"> <!--clamp(min, prefered, max)-->
         <h1 class="fw-bold text-wrap py-5" style="font-size: clamp(2rem, 6vw, 10rem); line-height: 1.2;">
-            PRICING
+            ProStyle
         </h1>
     </div>
 </section>
 
-<div class="row row-cols-1 row-cols-md-3 g-4 text-center px-5">
+<div class="container ">
+    <!-- Heading -->
+    <p class="text-center text-muted mb-5" style="max-width: 900px; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.25rem);">
+        Ideal for growing salons that want to streamline operations and enhance their client experience with more advanced tools.</p>
     
-    <!-- Essential Plan -->
-    <div class="col">
-        <div class="card h-100 shadow rounded-4 border-0 p-3">
-            <div class="card-body">
-                <h4 class="fw-bold">Essential</h4>
-                <p class="text-muted">Start simple and stay organized</p>
-                <ul class="list-unstyled text-start mt-4 mb-4">
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                </ul>
-                <h5 class="fw-bold text-primary">Free</h5>
-            </div>
-            <div class="card-footer border-0 bg-transparent">
-                <a href="pricing/essential.html" class="btn btn-primary rounded-pill">Learn more</a>
+    <!-- Row Layout -->
+    <div class="row align-items-center justify-content-center text-center">
+        
+        <!-- Left: Image Placeholder -->
+        <div class="col-md-4 text-center">
+            <div class="border rounded bg-light" style="width: 200px; height: 200px; margin: 0 auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 200">
+                    <line x1="0" y1="0" x2="200" y2="200" stroke="#aaa" stroke-width="2"/>
+                    <line x1="200" y1="0" x2="0" y2="200" stroke="#aaa" stroke-width="2"/>
+                </svg>
             </div>
         </div>
-    </div>
-    
-    <!-- ProStyle Plan -->
-    <div class="col">
-        <div class="card h-100 shadow rounded-4 border-0 p-3">
-            <div class="card-body">
-                <h4 class="fw-bold">ProStyle</h4>
-                <p class="text-muted">Level up your salon with smart tools</p>
-                <ul class="list-unstyled text-start mt-4 mb-4">
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                </ul>
-                <h5 class="fw-bold text-primary">s/69.9 x month</h5>
-            </div>
-            <div class="card-footer border-0 bg-transparent">
-                <a href="pricing/prostyle.html" class="btn btn-primary rounded-pill">Learn more</a>
+        
+        <!-- Center: Feature List -->
+        <div class="col-md-4 align-content-md-center">
+            <!-- Title on top -->
+            <h5 class="fw-bold mb-3">FEATURES</h5>
+            
+            <ul class="list-unstyled">
+                <li class="mb-2 text-success">
+                    <span class="text-primary">✔</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-success">
+                    <span class="text-primary">✔</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-success">
+                    <span class="text-primary">✔</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-success">
+                    <span class="text-primary">✔</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-success">
+                    <span class="text-primary">✔</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-danger">
+                    <span class="text-danger">✘</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-danger">
+                    <span class="text-danger">✘</span> Lorem ipsum dolor sit
+                </li>
+                <li class="mb-2 text-danger">
+                    <span class="text-danger">✘</span> Lorem ipsum dolor sit
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Right: Pricing and Buttons -->
+        <div class="col-md-4 text-center">
+            <h4 class="text-primary fw-bold">S/69.9 x month</h4>
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-outline-secondary rounded-pill">Schedule a demo</button>
+                <button class="btn btn-secondary rounded-pill">I want it!</button>
             </div>
         </div>
-    </div>
     
-    <!-- Deluxe Studio Plan -->
-    <div class="col">
-        <div class="card h-100 shadow rounded-4 border-0 p-3">
-            <div class="card-body">
-                <h4 class="fw-bold">Deluxe Studio</h4>
-                <p class="text-muted">All-in-one power for premium salons</p>
-                <ul class="list-unstyled text-start mt-4 mb-4">
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                    <li>✅ lorem ipsum dolor sit</li>
-                </ul>
-                <h5 class="fw-bold text-primary">s/129.9 x month</h5>
-            </div>
-            <div class="card-footer border-0 bg-transparent">
-                <a href="pricing/deluxestudio.html" class="btn btn-primary rounded-pill">Learn more</a>
-            </div>
-        </div>
     </div>
-
 </div>
 
 
-<footer class="px-3 py-3 my-4 border-top fixed-bottom">
+
+
+<footer class="px-3 py-3 my-4 border-top fixed-bottom bg-light">
     <ul class="nav justify-content-center">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Complaints book</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Terms & Conditions</a></li>
