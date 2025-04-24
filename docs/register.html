@@ -48,7 +48,6 @@
         </div>
     </div>
 </nav>
-<main>
     <main class="d-flex flex-column justify-content-center align-items-center text-center min-vh-100 pt-5 mt-5">
         <h1 class="fw-bold mb-2">Let the glam begin!</h1>
         <h3 class="fw-bold mb-4">Calling all stylists - join the glow-up</h3>
@@ -56,11 +55,9 @@
         <!-- Contenedor horizontal -->
         <div class="d-flex flex-row justify-content-center align-items-start gap-5">
             <!-- FORMULARIO -->
-            <div class="form-group d-flex flex-column gap-4">
-                <div class="d-flex align-items-center gap-3">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">I'm a Client</button>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">I'm a business</button>
-                </div>
+            <!--CLIENTE-->
+            <div class="form-group d-flex flex-column gap-4" id="form-client">
+                <!-- Campos comunes o específicos de cliente -->
                 <div class="d-flex align-items-center gap-3">
                     <label for="exampleInputName" class="mb-0" style="width: 150px;">Fullname</label>
                     <input type="text" class="form-control" id="exampleInputName" />
@@ -85,6 +82,14 @@
                     <button type="submit" class="btn btn-primary">Create Account</button>
                 </div>
             </div>
+
+                </div>
+
+            <div class="form-group d-flex flex-column gap-4">
+                <div class="d-flex align-items-center gap-3">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">I'm a Client</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">I'm a business</button>
+                </div>
 
             <!-- SECCIÓN DERECHA: Divider + Social -->
             <div class="d-flex flex-column align-items-center">
@@ -120,7 +125,5 @@
             </div>
         </div>
     </main>
-
-</main>
 </body>
 </html>
