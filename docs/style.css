@@ -1,0 +1,13 @@
+.cardColor {
+    background: linear-gradient(135deg, #F5F5FF 0%, #E6E6FA 50%, #D8BFD8 100%);
+}
+
+.btn {
+    background-color: purple;
+    color: white;
+}
+
+footer{
+    background-color: darkslategrey;
+    color: white;
+}
