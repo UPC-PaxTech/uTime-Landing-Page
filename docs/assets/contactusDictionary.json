@@ -1,0 +1,48 @@
+{
+  "en": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "more": "More",
+    "about_us": "About Us",
+    "contact_us": "Contact Us",
+    "sign_in": "Sign in",
+    "register": "Register",
+
+    "contact_us_title": "Contact Us",
+    "contact_us_heading": "Contact Us",
+    "utime": "uTime",
+    "paxtech": "PaxTech",
+    "sales_team": "Sales Team",
+    "support_team": "Support Team",
+    "get_in_touch": "Get in Touch",
+
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "comment": "Comment",
+    "contact_me": "Contact me"
+  },
+  "es": {
+    "home": "Inicio",
+    "pricing": "Precios",
+    "more": "Más",
+    "about_us": "Sobre Nosotros",
+    "contact_us": "Contáctanos",
+    "sign_in": "Iniciar sesión",
+    "register": "Registrarse",
+
+    "contact_us_title": "Contáctanos",
+    "contact_us_heading": "Contáctanos",
+    "utime": "uTime",
+    "paxtech": "PaxTech",
+    "sales_team": "Equipo de Ventas",
+    "support_team": "Equipo de Soporte",
+    "get_in_touch": "Ponte en Contacto",
+
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "email": "Correo Electrónico",
+    "comment": "Comentario",
+    "contact_me": "Contáctame"
+  }
+}
