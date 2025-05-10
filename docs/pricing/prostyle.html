@@ -3,136 +3,126 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title data-i18n="prostyle_plan_title">ProStyle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <a class="navbar-brand d-lg-none " href="../index.html"><img src="../image/logo.png" alt="logo" height="60"/></a>
+            <a class="navbar-brand d-lg-none" href="../index.html"><img src="../image/logo.png" alt="logo" height="60"></a>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pricing.html">Pricing</a>
-                </li>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="../index.html" data-i18n="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../pricing.html" data-i18n="pricing">Pricing</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">About Us</a></li>
-                        <li><a class="dropdown-item" href="#">Contact us</a></li>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-i18n="more">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-i18n="about_us">About Us</a></li>
+                        <li><a class="dropdown-item" href="#" data-i18n="contact_us">Contact Us</a></li>
                     </ul>
                 </li>
-            
             </ul>
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="navbar-brand mx-auto d-none d-lg-block" href="#"><img src="../image/logo.png" alt="logo" height="60"/></a>
+                    <a class="navbar-brand mx-auto d-none d-lg-block" href="#"><img src="../image/logo.png" alt="logo" height="60"></a>
                 </li>
             </ul>
             <div class="d-flex flex-column flex-lg-row gap-2">
-                <button type="button" class="btn btn-primary">Sign in</button>
-                <button type="button" class="btn btn-warning ms-lg-3">Register</button>
+                <button type="button" class="btn btn-primary" data-i18n="sign_in">Sign in</button>
+                <button type="button" class="btn btn-warning ms-lg-3" data-i18n="register">Register</button>
+                <div class="dropdown ms-lg-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-i18n="language">Language</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); loadTranslations('en');" data-i18n="english">English</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); loadTranslations('es');" data-i18n="spanish">Español</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    
     </div>
 </nav>
 
 <section class="text-center py-5">
-    <div class="container-fluid px-4"> <!--clamp(min, prefered, max)-->
-        <h1 class="fw-bold text-wrap py-5" style="font-size: clamp(2rem, 6vw, 10rem); line-height: 1.2;">
-            ProStyle
-        </h1>
+    <div class="container-fluid px-4">
+        <h1 class="fw-bold text-wrap py-5" style="font-size: clamp(2rem, 6vw, 10rem); line-height: 1.2;" data-i18n="prostyle_plan_title">ProStyle</h1>
     </div>
 </section>
 
-<div class="container ">
-    <!-- Heading -->
-    <p class="text-center text-muted mb-5" style="max-width: 900px; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.25rem);">
-        Ideal for growing salons that want to streamline operations and enhance their client experience with more advanced tools.</p>
+<div class="container">
+    <p class="text-center text-muted mb-5" style="max-width: 900px; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.25rem);" data-i18n="prostyle_plan_description">
+        Ideal for growing salons that want to streamline operations and enhance their client experience with more advanced tools.
+    </p>
     
-    <!-- Row Layout -->
     <div class="row align-items-center justify-content-center text-center">
-        
-        <!-- Left: Image Placeholder -->
         <div class="col-md-4 text-center">
             <img src="https://files.catbox.moe/0fz2y7.png" alt="imagen" height="300">
         </div>
         
-        <!-- Center: Feature List -->
-        <div class="col-md-4 align-content-md-center">
-            <!-- Title on top -->
-            <h5 class="fw-bold mb-3">FEATURES</h5>
-            
+        <div class="col-md-4">
+            <h5 class="fw-bold mb-3" data-i18n="features_title">FEATURES</h5>
             <ul class="list-unstyled">
-                <li class="mb-2 text-success">
-                    <span class="text-primary">✔</span> Smart calendar
-                </li>
-                <li class="mb-2 text-success">
-                    <span class="text-primary">✔</span> Client booking page
-                </li>
-                <li class="mb-2 text-success">
-                    <span class="text-primary">✔</span> Stylist profiles
-                </li>
-                <li class="mb-2 text-success">
-                    <span class="text-primary">✔</span> Reviews & ratings
-                </li>
-                <li class="mb-2 text-success">
-                    <span class="text-primary">✔</span> WhatsApp & email reminders
-                </li>
-                <li class="mb-2 text-danger">
-                    <span class="text-danger">✘</span> Custom booking link
-                </li>
-                <li class="mb-2 text-danger">
-                    <span class="text-danger">✘</span> Client database
-                </li>
-                <li class="mb-2 text-danger">
-                    <span class="text-danger">✘</span> Advanced analytics
-                </li>
+                <li class="mb-2 text-success" data-i18n="feature_smart_calendar"><span class="text-primary">✔</span> Smart Calendar</li>
+                <li class="mb-2 text-success" data-i18n="feature_booking_page"><span class="text-primary">✔</span> Client booking page</li>
+                <li class="mb-2 text-success" data-i18n="feature_stylist_profiles"><span class="text-primary">✔</span> Stylist profiles</li>
+                <li class="mb-2 text-success" data-i18n="feature_reviews_ratings"><span class="text-primary">✔</span> Reviews & ratings</li>
+                <li class="mb-2 text-success" data-i18n="feature_whatsapp_reminders"><span class="text-primary">✔</span> WhatsApp & email reminders</li>
+                <li class="mb-2 text-danger" data-i18n="feature_custom_link"><span class="text-danger">✘</span> Custom booking link</li>
+                <li class="mb-2 text-danger" data-i18n="feature_client_db"><span class="text-danger">✘</span> Client database</li>
+                <li class="mb-2 text-danger" data-i18n="feature_analytics"><span class="text-danger">✘</span> Advanced analytics</li>
             </ul>
         </div>
         
-        <!-- Right: Pricing and Buttons -->
         <div class="col-md-4 text-center">
-            <h4 class="text-primary fw-bold">S/69.9 x month</h4>
+            <h4 class="text-primary fw-bold" data-i18n="price_prostyle">S/69.9 x month</h4>
             <div class="d-grid gap-2 mt-3">
-                <button class="btn btn-outline-secondary rounded-pill">Schedule a demo</button>
-                <button class="btn btn-secondary rounded-pill">I want it!</button>
+                <button class="btn btn-outline-secondary rounded-pill" data-i18n="schedule_demo">Schedule a demo</button>
+                <button class="btn btn-secondary rounded-pill" data-i18n="i_want_it">I want it!</button>
             </div>
         </div>
-    
     </div>
 </div>
 
-
-
 <footer class="px-3 py-3 my-4 border-top text-white">
     <ul class="nav justify-content-center">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Complaints book</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Terms & Conditions</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white ">Privacy Policy</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Cookies Policy</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Help</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Frequent Questions</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="complaints">Complaints book</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="terms">Terms & Conditions</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="privacy">Privacy Policy</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="cookies">Cookies Policy</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="help">Help</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="faq">Frequent Questions</a></li>
     </ul>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let translations = {};
+    
+    function loadTranslations(lang) {
+        fetch('../assets/prostyleDictionary.json')
+                .then(response => response.json())
+                .then(data => {
+                    translations = data;
+                    switchLanguage(lang);
+                })
+                .catch(error => console.error('Error loading translations:', error));
+    }
+    
+    function switchLanguage(lang) {
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+</script>
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

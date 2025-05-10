@@ -1,0 +1,50 @@
+{
+  "en": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "more": "More",
+    "about_us": "About Us",
+    "contact_us": "Contact Us",
+    "sign_in": "Sign in",
+    "register": "Register",
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish",
+
+    "about_us_heading": "About us",
+    "about_us_p1": "PaxTech is a startup led by students from the Universidad Peruana de Ciencias Aplicadas, dedicated to developing innovative technological solutions.",
+    "about_us_p2": "In a world where digitalization is key to success, PaxTech empowers beauty professionals with an intuitive and automated platform that enhances the experience for them and their clients.",
+    "about_us_p3": "Through our solution, we aim to revolutionize how stylists organize their schedules, reduce time loss, and increase their market visibility.",
+
+    "complaints": "Complaints book",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies Policy",
+    "help": "Help",
+    "faq": "Frequent Questions"
+  },
+  "es": {
+    "home": "Inicio",
+    "pricing": "Precios",
+    "more": "Más",
+    "about_us": "Sobre Nosotros",
+    "contact_us": "Contáctanos",
+    "sign_in": "Iniciar sesión",
+    "register": "Registrarse",
+    "language": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español",
+
+    "about_us_heading": "Sobre Nosotros",
+    "about_us_p1": "PaxTech es una startup liderada por estudiantes de la Universidad Peruana de Ciencias Aplicadas, dedicada al desarrollo de soluciones tecnológicas innovadoras.",
+    "about_us_p2": "En un mundo donde la digitalización es clave para el éxito, PaxTech empodera a los profesionales de la belleza con una plataforma intuitiva y automatizada que mejora la experiencia tanto para ellos como para sus clientes.",
+    "about_us_p3": "A través de nuestra solución, buscamos revolucionar la manera en que los estilistas organizan su agenda, reduciendo la pérdida de tiempo y aumentando su visibilidad en el mercado.",
+
+    "complaints": "Libro de Reclamaciones",
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "help": "Ayuda",
+    "faq": "Preguntas Frecuentes"
+  }
+}
