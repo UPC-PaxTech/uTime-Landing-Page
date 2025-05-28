@@ -1,413 +1,687 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uTime</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/205873631?s=400&u=7181957c1d03747f9dd9a668e2d4857d99ce55ff&v=4" type="image/png">
 </head>
-<style>
-    /* Blue buttons with white arrows */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: purple; /* Bootstrap primary blue */
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-size: 60%; /* Make the arrow smaller */
-    }
 
-    /* Custom carousel container */
-    .carousel-external-arrows {
-        position: relative;
-        padding: 0 60px; /* Make space for arrows */
-    }
+<body class="font-sans text-gray-900 bg-white leading-relaxed bg-gradient-to-b from-purple-100 via-pink-50 to-white ">
 
-    /* Arrow positioning */
-    .carousel-external-arrows .carousel-control-prev {
-        left: -50px; /* Move left arrow outside */
-    }
-    .carousel-external-arrows .carousel-control-next {
-        right: -50px; /* Move right arrow outside */
-    }
 
-    /* Arrow styling */
-    .carousel-external-arrows .carousel-control-prev,
-    .carousel-external-arrows .carousel-control-next {
-        width: 50px;
-        height: 50px;
-        background-color: purple;
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 1;
-    }
+<!-- Botón flotante redondo, oculto al inicio -->
+<button id="restoreNavbarBtn"
+        class="fixed top-4 left-4 z-50 bg-purple-700 text-white p-3 w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:bg-purple-800 transition-all duration-500 transform -translate-y-10 opacity-0 pointer-events-none"
+        aria-label="Mostrar navbar">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+       xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
 
-    /* Arrow icon sizing */
-    .carousel-external-arrows .carousel-control-prev-icon,
-    .carousel-external-arrows .carousel-control-next-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+<!-- Navbar principal -->
+<header id="navbarWrapper"
+        class="fixed top-0 left-0 w-full z-40 flex justify-center px-5 transform transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+  <nav
+          class="flex items-center justify-between w-full max-w-screen-xl backdrop-blur-md bg-white/90 border border-gray-200 shadow-lg px-10 py-4 mt-5 rounded-full ring-1 ring-gray-100">
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .carousel-external-arrows {
-            padding: 0 30px;
-        }
-        .carousel-external-arrows .carousel-control-prev {
-            left: -30px;
-        }
-        .carousel-external-arrows .carousel-control-next {
-            right: -30px;
-        }
+    <!-- Botón para colapsar -->
+    <button id="collapseNavbarBtn"
+            class="mr-6 text-purple-700 hover:text-white bg-purple-100 hover:bg-purple-700 transition-all duration-300 rounded-full p-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
 
-    }
-
-    .btn {
-        background-color: purple;
-        color: white;
-    }
-
-    .cardColor {
-        background: linear-gradient(135deg, #F5F5FF 0%, #E6E6FA 50%, #D8BFD8 100%);
-    }
-
-    .text-primary {
-        color: purple;
-    }
-</style>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between">
-            <a class="navbar-brand d-lg-none" href="#"><img src="image/logo.png" alt="logo" height="60"></a>
-            <a class="navbar-brand d-lg-none" href="#"><img src="image/logo.png" alt="logo" height="60"></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" data-i18n="home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pricing.html" data-i18n="pricing">Pricing</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="more">More</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="about-us.html" data-i18n="about_us">About Us</a></li>
-                        <li><a class="dropdown-item" href="contact-us.html" data-i18n="contact_us">Contact Us</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="navbar-brand mx-auto d-none d-lg-block" href="#"><img src="image/logo.png" alt="logo" height="60"></a>
-                </li>
-            </ul>
-            <div class="d-flex flex-column flex-lg-row gap-2">
-                <a href="https://upc-paxtech.github.io/Frontend-Web-Applications/iam/login">
-                    <button type="button" class="btn btn-primary" data-i18n="sign_in">Sign in</button>
-                </a>
-                <a href="https://upc-paxtech.github.io/Frontend-Web-Applications/iam/register">
-                    <button type="button" class="btn btn-warning ms-lg-3" data-i18n="register">Register</button>
-                </a>
-                <!-- Language Switcher -->
-                <div class="dropdown ms-lg-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="language">Language</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); loadTranslations('en');" data-i18n="english">English</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); loadTranslations('es');" data-i18n="spanish">Español</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- Logo -->
+    <div class="flex items-center">
+      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        <img src="https://github.com/UPC-PaxTech/uTime/blob/main/img/logoutime.png?raw=true" alt="Logo" class="h-10 w-auto max-h-full">
+      </button>
     </div>
-</nav>
 
-</nav>
-
-<section class="text-center py-5 mt-5">
-    <div class="container-fluid px-4">
-        <h1 class="fw-bold text-wrap" style="font-size: clamp(2rem, 6vw, 10rem); line-height: 1.2;" data-i18n="hero_heading">
-            Your Time is Gold<br>Let uTime Make It Shine
-        </h1>
-        <p class="mt-3" style="font-size: clamp(1rem, 2vw, 1.5rem); max-width: 700px; margin-inline: auto;" data-i18n="hero_subtext">
-            Professional scheduling for professionals like you. Impress your clients, simplify your day, and elevate your service
-        </p>
-        <button type="button" class="btn btn-lg px-5 py-3 rounded-pill mt-4" onclick="window.location.href='sign-in.html'" data-i18n="start_today">
-            Start today!
-        </button>
-    </div>
-</section>
-
-
-<div class="carousel-external-arrows">
-    <div class="container-fluid px-5 my-5 container-md">
-        <div id="featuresCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 - Smart Calendar -->
-                <div class="carousel-item active">
-                    <div class="card mb-3 feature-card">
-                        <div class="row g-0 h-100">
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <img src="https://files.catbox.moe/azj9dw.png" class="img-fluid rounded-start" alt="Smart Calendar">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title fw-bold text-wrap display-4" data-i18n="smart_calendar_title">Smart Calendar</h2>
-                                    <p class="card-text fs-4" data-i18n="smart_calendar_desc">Manage your appointments with an intuitive calendar designed for your weekly flow. Add, edit, reschedule, and view your whole week at a glance - no confusion, no clutter.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 2 - Automatic Reminders -->
-                <div class="carousel-item">
-                    <div class="card mb-3 feature-card">
-                        <div class="row g-0 h-100">
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <img src="https://files.catbox.moe/oed2jq.png" class="img-fluid rounded-start" alt="Automatic Reminders">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title fw-bold text-wrap display-4" data-i18n="auto_reminders_title">Automatic Reminders</h2>
-                                    <p class="card-text fs-4" data-i18n="auto_reminders_desc">uTime sends reminders to your clients automatically - so they never forget their appointment and you never lose time or income.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 3 - Reviews & Ratings -->
-                <div class="carousel-item">
-                    <div class="card mb-3 feature-card">
-                        <div class="row g-0 h-100">
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <img src="https://files.catbox.moe/d3d97z.png" class="img-fluid rounded-start" alt="Reviews & Ratings">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title fw-bold text-wrap display-4" data-i18n="reviews_ratings_title">Reviews & Ratings</h2>
-                                    <p class="card-text fs-4" data-i18n="reviews_ratings_desc">Collect feedback from clients after each session. Build your reputation with verified reviews and showcase your excellence to future clients.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 4 - Stylist Profiles -->
-                <div class="carousel-item">
-                    <div class="card mb-3 feature-card">
-                        <div class="row g-0 h-100">
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <img src="https://files.catbox.moe/wwcnoy.png" class="img-fluid rounded-start" alt="Stylist Profiles">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title fw-bold text-wrap display-4" data-i18n="stylist_profiles_title">Stylist Profiles</h2>
-                                    <p class="card-text fs-4" data-i18n="stylist_profiles_desc">Create a personalized profile with your bio, specialties, pricing, and portfolio. Help clients get to know you before they book - and build trust from the first click.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 5 - Secure Payment -->
-                <div class="carousel-item">
-                    <div class="card mb-3 feature-card">
-                        <div class="row g-0 h-100">
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <img src="https://files.catbox.moe/b3lsdy.png" class="img-fluid rounded-start" alt="Secure Payment">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title fw-bold text-wrap display-4" data-i18n="secure_payment_title">Secure Payment</h2>
-                                    <p class="card-text fs-4" data-i18n="secure_payment_desc">Accept payments online with confidence. uTime offers seamless checkout options for clients and ensures your transactions are encrypted and secure.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden" data-i18n="prev">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden" data-i18n="next">Next</span>
-            </button>
-            
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators position-static mt-3">
-                <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active bg-dark" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" class="bg-dark" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="2" class="bg-dark" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" class="bg-dark" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" class="bg-dark" aria-label="Slide 5"></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<br/>
-<br/>
-<div class="row gx-5 px-5">
-    <div class="col-sm-6">
-        <div class="card p-5 pb-1 bg-light cardColor">
-            <div class="card-body">
-                <h5 class="card-title font-weight-bold" data-i18n="look_book_title">Look & book</h5>
-                <p class="card-text" data-i18n="look_book_desc">
-                    Explore talented stylists and barbers near you, view their work, read reviews, and book in just a few taps. Smooth, fast, and totally stress-free.
-                </p>
-                <a href="#" class="btn btn-primary" data-i18n="book_now">Book now</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="card p-5 pb-1 bg-light cardColor">
-            <div class="card-body">
-                <h5 class="card-title font-weight-bold" data-i18n="glow_business_title">Glow up your business</h5>
-                <p class="card-text" data-i18n="glow_business_desc">
-                    From appointment scheduling to secure payments and building your online presence. All in one sleek, easy-to-use platform.
-                </p>
-                <a href="#" class="btn btn-primary" data-i18n="start_now">Start now</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<section class="py-5">
-    <div class="container">
-        <h1 class="display-4 fw-bold text-center mb-5" data-i18n="journey_title">The journey starts here</h1>
-        
-        <div class="row g-4 justify-content-center">
-            <!-- Card 1 -->
-            <div class="col-md-10 col-lg-8">
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-1 text-center py-3 py-md-0">
-                            <span class="display-6 fw-bold">1</span>
-                        </div>
-                        <div class="col-md-11">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4" data-i18n="journey_step1_title">Look for your favorite stylist</h5>
-                                <p class="card-text text-muted" data-i18n="journey_step1_desc">Browse our directory of professional stylists and find your perfect match.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 2 -->
-            <div class="col-md-10 col-lg-8">
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-1 text-center py-3 py-md-0">
-                            <span class="display-6 fw-bold">2</span>
-                        </div>
-                        <div class="col-md-11">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4" data-i18n="journey_step2_title">Check their availability</h5>
-                                <p class="card-text text-muted" data-i18n="journey_step2_desc">View real-time availability and select a time that works for you.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="col-md-10 col-lg-8">
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-1 text-center py-3 py-md-0">
-                            <span class="display-6 fw-bold">3</span>
-                        </div>
-                        <div class="col-md-11">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4" data-i18n="journey_step3_title">Save the date and choose payment</h5>
-                                <p class="card-text text-muted" data-i18n="journey_step3_desc">Secure your appointment with our easy booking system and payment options.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 4 -->
-            <div class="col-md-10 col-lg-8">
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-1 text-center py-3 py-md-0">
-                            <span class="display-6 fw-bold">4</span>
-                        </div>
-                        <div class="col-md-11">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4" data-i18n="journey_step4_title">You're good to go. Enjoy!</h5>
-                                <p class="card-text text-muted" data-i18n="journey_step4_desc">Sit back and relax - we'll send you reminders before your appointment.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5">
-            <button class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold" data-i18n="journey_start_now">¡Start now!</button>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer -->
-<footer class="px-3 py-3 my-4 border-top">
-    <ul class="nav justify-content-center">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="complaints">Complaints book</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="terms">Terms & Conditions</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="privacy">Privacy Policy</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="cookies">Cookies Policy</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="help">Help</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-white" data-i18n="faq">Frequent Questions</a></li>
+    <!-- Links -->
+    <ul class="hidden md:flex gap-6 flex-1 justify-center text-base font-medium text-gray-600">
+      <li><a href="#features" class="hover:text-purple-700 transition-colors duration-200 relative group">
+        Features <span
+              class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-700 transition-all group-hover:w-full"></span>
+      </a></li>
+      <li><a href="#howitworks" class="hover:text-purple-700 transition-colors duration-200 relative group">
+        How it Works <span
+              class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-700 transition-all group-hover:w-full"></span>
+      </a></li>
+      <li><a href="#pricing" class="hover:text-purple-700 transition-colors duration-200 relative group">
+        Pricing <span
+              class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-700 transition-all group-hover:w-full"></span>
+      </a></li>
+      <li><a href="#testimonials" class="hover:text-purple-700 transition-colors duration-200 relative group">
+        Testimonials <span
+              class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-700 transition-all group-hover:w-full"></span>
+      </a></li>
+      <li><a href="#faq" class="hover:text-purple-700 transition-colors duration-200 relative group">
+        FAQ <span
+              class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-700 transition-all group-hover:w-full"></span>
+      </a></li>
     </ul>
-</footer>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <!-- CTA -->
+    <a href="https://upc-paxtech.github.io/Frontend-Web-Applications/"
+       class="ml-4 bg-purple-700 text-white font-semibold px-5 py-2.5 rounded-md shadow-md hover:bg-purple-800 transition duration-300">
+      Get Started
+    </a>
+  </nav>
+</header>
 
 <script>
-    let translations = {};
-    
-    function loadTranslations(lang) {
-        fetch('assets/translations.json')
-                .then(response => response.json())
-                .then(data => {
-                    translations = data;
-                    switchLanguage(lang);
-                })
-                .catch(error => console.error('Error loading translations:', error));
-    }
-    
-    function switchLanguage(lang) {
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-            const key = el.getAttribute("data-i18n");
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
-        });
-    }
+  const collapseBtn = document.getElementById('collapseNavbarBtn');
+  const restoreBtn = document.getElementById('restoreNavbarBtn');
+  const navbar = document.getElementById('navbarWrapper');
+
+  collapseBtn.addEventListener('click', () => {
+    // Oculta el navbar desplazándolo hacia arriba
+    navbar.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+
+    // Muestra el botón flotante bajando
+    restoreBtn.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-10');
+    restoreBtn.classList.add('translate-y-0');
+  });
+
+  restoreBtn.addEventListener('click', () => {
+    // Restaura el navbar bajando desde arriba
+    navbar.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+
+    // Oculta el botón flotante subiéndolo
+    restoreBtn.classList.add('opacity-0', 'pointer-events-none', '-translate-y-10');
+    restoreBtn.classList.remove('translate-y-0');
+  });
 </script>
 
 
+
+  <!-- Hero Section -->
+<section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center gap-6 px-5 pt-60 pb-32 bg-gradient-to-b from-purple-100 via-pink-50 to-white">
+
+
+<h2 class="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-purple-800 via-purple-600 to-gray-900 leading-tight">
+      Reserva sin llamadas<br class="hidden md:block"> ni esperas
+    </h2>
+
+    <p class="text-lg md:text-xl text-gray-700 max-w-2xl mt-6">
+      Explora el calendario en tiempo real de tu salón favorito y asegura tu cita con quien prefieras, al instante.
+    </p>
+
+    <a
+            href="https://upc-paxtech.github.io/Frontend-Web-Applications/"
+            class="bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold px-8 py-4 rounded-full shadow-xl hover:from-purple-700 hover:to-purple-900 transition duration-300 mt-8 text-lg">
+      Comenzar Gratis →
+    </a>
+
+    <img
+            src="https://www.shutterstock.com/shutterstock/photos/2207273311/display_1500/stock-vector--years-calendar-calender-layout-week-starts-sunday-desk-2207273311.jpg"
+            alt="Vista previa de la app"
+            class="mt-14 w-11/12 max-w-4xl rounded-2xl shadow-2xl border border-white/40">
+
+  </section>
+
+
+
+
+<!-- Features Section -->
+<section id="features" class="py-20 space-y-28 bg-white">
+
+
+  <!-- Feature 1 -->
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="bg-gradient-to-b from-purple-100 via-pink-50 to-white p-10 rounded-3xl shadow-xl flex flex-col lg:flex-row items-center gap-12">
+      <!-- Text -->
+      <div class="lg:w-1/2">
+        <div class="text-sm font-medium text-purple-600 uppercase tracking-wide mb-2">Features</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+          Task Management for Streamlined Workflows
+        </h2>
+        <p class="text-gray-600 mt-4">
+          Maximize efficiency and reduce manual effort with our intelligent task automation features designed to simplify complex workflows.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+          <div><h4 class="font-semibold">📋 Automated Task</h4><p class="text-sm text-gray-600">Automatically assign tasks.</p></div>
+          <div><h4 class="font-semibold">🔀 Smart Task Routing</h4><p class="text-sm text-gray-600">Route tasks directly to team.</p></div>
+          <div><h4 class="font-semibold">⚙️ Conditional Triggers</h4><p class="text-sm text-gray-600">Set triggers to initiate task actions.</p></div>
+          <div><h4 class="font-semibold">🔗 Integration Autos</h4><p class="text-sm text-gray-600">Automate and integrate tasks.</p></div>
+        </div>
+
+        <button onclick="window.location.href='https://upc-paxtech.github.io/Frontend-Web-Applications/'" class="mt-10 px-6 py-3 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition">
+          Get Started →
+        </button>
+      </div>
+      <!-- Image -->
+      <div class="lg:w-1/2">
+        <img src="https://i.imgur.com/XfXhW3b.png" alt="Task Feature Image" class="w-full rounded-xl shadow-xl">
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 2 (reversed) -->
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="bg-gradient-to-b from-purple-100 via-pink-50 to-white p-10 rounded-3xl shadow-xl flex flex-col lg:flex-row-reverse items-center gap-12">
+      <!-- Text -->
+      <div class="lg:w-1/2">
+        <div class="text-sm font-medium text-purple-600 uppercase tracking-wide mb-2">Features</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+          Real-Time Team Collaboration
+        </h2>
+        <p class="text-gray-600 mt-4">
+          Empower your team with tools to collaborate, communicate, and stay in sync regardless of location or role.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+          <div><h4 class="font-semibold">💬 Live Chat</h4><p class="text-sm text-gray-600">Instant communication across your team.</p></div>
+          <div><h4 class="font-semibold">📁 File Sharing</h4><p class="text-sm text-gray-600">Share docs and assets effortlessly.</p></div>
+          <div><h4 class="font-semibold">🗂️ Kanban Boards</h4><p class="text-sm text-gray-600">Track progress with visual boards.</p></div>
+          <div><h4 class="font-semibold">⏱️ Time Tracking</h4><p class="text-sm text-gray-600">Stay on top of timelines and deliverables.</p></div>
+        </div>
+
+        <button onclick="window.location.href='https://upc-paxtech.github.io/Frontend-Web-Applications/'" class="mt-10 px-6 py-3 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition">
+          Get Started →
+        </button>
+      </div>
+      <!-- Image -->
+      <div class="lg:w-1/2">
+        <img src="https://i.imgur.com/6WR9iV3.png" alt="Collaboration Feature Image" class="w-full rounded-xl shadow-xl">
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 3 -->
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="bg-gradient-to-b from-purple-100 via-pink-50 to-white p-10 rounded-3xl shadow-xl flex flex-col lg:flex-row items-center gap-12">
+      <!-- Text -->
+      <div class="lg:w-1/2">
+        <div class="text-sm font-medium text-purple-600 uppercase tracking-wide mb-2">Features</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+          Visual Analytics and Insights
+        </h2>
+        <p class="text-gray-600 mt-4">
+          Make informed decisions faster with integrated dashboards and powerful reporting tools built into your workflow.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+          <div><h4 class="font-semibold">📊 Dashboard Views</h4><p class="text-sm text-gray-600">Customize your data layout.</p></div>
+          <div><h4 class="font-semibold">📈 Trend Analysis</h4><p class="text-sm text-gray-600">Spot insights in real time.</p></div>
+          <div><h4 class="font-semibold">🔔 Alerts & Notifications</h4><p class="text-sm text-gray-600">Never miss a key event.</p></div>
+          <div><h4 class="font-semibold">🔍 Detailed Reports</h4><p class="text-sm text-gray-600">Export and present your findings.</p></div>
+        </div>
+
+        <button onclick="window.location.href='https://upc-paxtech.github.io/Frontend-Web-Applications/'" class="mt-10 px-6 py-3 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition">
+          Get Started →
+        </button>
+      </div>
+      <!-- Image -->
+      <div class="lg:w-1/2">
+        <img src="https://i.imgur.com/YV2PQAb.png" alt="Analytics Feature Image" class="w-full rounded-xl shadow-xl">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- How it Works -->
+<section id="howitworks" class="bg-gradient-to-b from-white to-purple-50 py-20">
+  <div class="max-w-screen-xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Steps to Seamless Project Management</h2>
+    <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+      Get started quickly and effortlessly with our intuitive process. Follow these easy steps to maximize productivity and collaboration.
+    </p>
+
+    <!-- Timeline -->
+    <div class="relative mt-20">
+      <!-- Vertical Line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-purple-200"></div>
+
+      <!-- Step 1 -->
+      <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start md:gap-12 mb-20">
+        <div class="w-full md:w-1/2 md:pr-12 text-right md:text-left">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Setup your Account</h3>
+          <p class="text-gray-600">
+            Creating your account is quick and easy. Start by providing your basic information such as name, email, and a secure password.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 mt-8 md:mt-0">
+          <img src="https://i.imgur.com/FwV90T3.png" alt="Step 1" class="rounded-xl shadow-lg mx-auto max-w-sm">
+        </div>
+        <div class="absolute left-1/2 top-1 transform -translate-x-1/2 -translate-y-1/2 bg-white border-2 border-purple-300 rounded-full w-12 h-12 flex items-center justify-center text-purple-700 text-2xl">
+          👤
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative z-10 flex flex-col md:flex-row-reverse items-center md:gap-12 mb-20">
+        <div class="w-full md:w-1/2 md:pl-12 text-left">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Connect Your Calendar</h3>
+          <p class="text-gray-600">
+            Sync the AI Scheduling Assistant with your calendar app, including Google Calendar, Outlook, or Apple Calendar.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 mt-8 md:mt-0">
+          <img src="https://i.imgur.com/8D68GKe.png" alt="Step 2" class="rounded-xl shadow-lg mx-auto max-w-sm">
+        </div>
+        <div class="absolute left-1/2 top-1 transform -translate-x-1/2 -translate-y-1/2 bg-white border-2 border-purple-300 rounded-full w-12 h-12 flex items-center justify-center text-purple-700 text-2xl">
+          📅
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start md:gap-12 mb-20">
+        <div class="w-full md:w-1/2 md:pr-12 text-right md:text-left">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Set Your Preferences</h3>
+          <p class="text-gray-600">
+            Customize your availability, meeting times, and other preferences to suit your working style.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 mt-8 md:mt-0">
+          <img src="https://i.imgur.com/R9QyRxM.png" alt="Step 3" class="rounded-xl shadow-lg mx-auto max-w-sm">
+        </div>
+        <div class="absolute left-1/2 top-1 transform -translate-x-1/2 -translate-y-1/2 bg-white border-2 border-purple-300 rounded-full w-12 h-12 flex items-center justify-center text-purple-700 text-2xl">
+          ⚙️
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="relative z-10 flex flex-col md:flex-row-reverse items-center md:gap-12 mb-20">
+        <div class="w-full md:w-1/2 md:pl-12 text-left">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Collaborate & Track</h3>
+          <p class="text-gray-600">
+            Communicate with your team, share files, leave comments, and track progress in real-time.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 mt-8 md:mt-0">
+          <img src="https://i.imgur.com/SYKmHzJ.png" alt="Step 4" class="rounded-xl shadow-lg mx-auto max-w-sm">
+        </div>
+        <div class="absolute left-1/2 top-1 transform -translate-x-1/2 -translate-y-1/2 bg-white border-2 border-purple-300 rounded-full w-12 h-12 flex items-center justify-center text-purple-700 text-2xl">
+          🤝
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-20 max-w-6xl mx-auto px-6">
+      <div class="bg-white rounded-3xl shadow-xl px-10 py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div class="text-center lg:text-left">
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Ready to Elevate Your Project Management?</h3>
+          <p class="text-gray-600">
+            Experience the efficiency and collaboration of our project management tool.<br class="hidden sm:block"> Sign up today and transform the way your team works.
+          </p>
+        </div>
+        <a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-full shadow-md font-semibold hover:from-purple-700 hover:to-purple-900 transition">
+          Get Started →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Pricing -->
+<section id="pricing" class="bg-gradient-to-b from-white to-purple-50 py-20">
+  <div class="max-w-screen-xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <div class="mb-16">
+      <div class="text-sm text-purple-600 font-medium mb-2 flex justify-center items-center gap-2">
+        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c.828 0 1.5-.895 1.5-2S12.828 4 12 4s-1.5.895-1.5 2 .672 2 1.5 2zm0 4c.828 0 1.5-.895 1.5-2s-.672-2-1.5-2-1.5.895-1.5 2 .672 2 1.5 2zm0 4c.828 0 1.5-.895 1.5-2s-.672-2-1.5-2-1.5.895-1.5 2 .672 2 1.5 2z" /></svg>
+        Pricing
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Simple, Transparent Plan and Pricing</h2>
+      <p class="text-gray-600 mt-2 max-w-xl mx-auto">Receive unlimited credits when you pay yearly, and save on your plan.</p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Basic Plan -->
+      <div class="bg-white rounded-xl shadow-md p-8 text-left border border-gray-100">
+        <p class="text-sm text-gray-500 font-medium mb-2">For Individuals</p>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Basic</h3>
+        <p class="text-sm text-gray-600 mb-4">Perfect for small teams and individuals just starting out with project management.</p>
+        <p class="text-3xl font-bold text-purple-700 mb-4">$10<span class="text-base text-gray-500 font-normal">/month</span></p>
+        <ul class="space-y-3 text-sm text-gray-700 mb-6">
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Basic Task Management</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Team Collaboration</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Basic Reporting</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Real-Time Activity Feed</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Mobile Access</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Email Support</li>
+        </ul>
+        <button onclick="window.location.href='https://upc-paxtech.github.io/Frontend-Web-Applications/'" class="w-full bg-white border border-purple-600 text-purple-700 font-semibold py-2 rounded-md hover:bg-purple-50 transition">Contact Sales</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="bg-white rounded-xl shadow-lg p-8 text-left border-2 border-purple-600 relative">
+        <p class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-semibold rounded-bl-md px-3 py-1">Most Popular</p>
+        <p class="text-sm text-gray-500 font-medium mb-2">For Startups</p>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pro</h3>
+        <p class="text-sm text-gray-600 mb-4">Perfect for growing teams that need advanced features to boost productivity.</p>
+        <p class="text-3xl font-bold text-purple-700 mb-4">$25<span class="text-base text-gray-500 font-normal">/month</span></p>
+        <ul class="space-y-3 text-sm text-gray-700 mb-6">
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Time Tracking</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Advanced Reporting</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Priority Levels</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Subtasks & Checklists</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Productivity Analytics</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Billable Hours</li>
+        </ul>
+        <button onclick="window.location.href='https://upc-paxtech.github.io/Frontend-Web-Applications/'" class="w-full bg-purple-700 text-white font-semibold py-2 rounded-md hover:bg-purple-800 transition">Contact Sales</button>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="bg-white rounded-xl shadow-md p-8 text-left border border-gray-100">
+        <p class="text-sm text-gray-500 font-medium mb-2">For Big Companies</p>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Enterprise</h3>
+        <p class="text-sm text-gray-600 mb-4">Perfect for large teams and enterprises with complex project management needs.</p>
+        <p class="text-3xl font-bold text-purple-700 mb-4">$50<span class="text-base text-gray-500 font-normal">/month</span></p>
+        <ul class="space-y-3 text-sm text-gray-700 mb-6">
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Custom Integrations</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Customizable Dashboard</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Unlimited Projects</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Milestone Monitoring</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Priority Support</li>
+          <li class="flex items-center gap-2"><span class="text-purple-600">✔</span> Onboarding Assistance</li>
+        </ul>
+        <button onclick="window.location.href='https://upc-paxtech.github.io/Frontend-Web-Applications/'" class="w-full bg-white border border-purple-600 text-purple-700 font-semibold py-2 rounded-md hover:bg-purple-50 transition">Contact Sales</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-24 px-6 bg-gradient-to-b from-purple-50 to-white">
+  <div class="max-w-6xl mx-auto rounded-3xl bg-white shadow-xl p-10 overflow-hidden">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <div class="text-sm text-purple-600 font-medium mb-2 flex justify-center items-center gap-2">
+        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" /></svg>
+        Testimonials
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Used by More Than 100+ Business</h2>
+      <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Hear what they say about us and why you should choose our tool.</p>
+    </div>
+
+    <!-- Carousel Wrapper Row 1 -->
+    <div class="overflow-hidden mb-10">
+      <div class="flex gap-6 animate-carousel-left">
+        <!-- Duplicate content to enable seamless loop -->
+        <template id="carousel-row-1">
+          <div class="testimonial-card">
+            <div class="flex mb-2 text-purple-500 text-lg">★★★★★</div>
+            <p class="text-gray-700 mb-4">Flowzy is the best professional project management in the world! He is a great motivator for the beginners in this discipline.</p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Marvin McKinney" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="font-semibold text-gray-800">Marvin McKinney</p>
+                <p class="text-sm text-gray-500">Team Leader</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="flex mb-2 text-purple-500 text-lg">★★★★★</div>
+            <p class="text-gray-700 mb-4">I’ve worked with Flowzy at multiple events. They always deliver. I really appreciate their reliability and communication.</p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Courtney Henry" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="font-semibold text-gray-800">Courtney Henry</p>
+                <p class="text-sm text-gray-500">UI/UX Designer</p>
+              </div>
+            </div>
+          </div>
+        </template>
+        <script>
+          const row1 = document.querySelector('.animate-carousel-left');
+          const row1Content = document.getElementById('carousel-row-1').content;
+          row1.appendChild(row1Content.cloneNode(true));
+          row1.appendChild(row1Content.cloneNode(true));
+        </script>
+      </div>
+    </div>
+
+    <!-- Carousel Wrapper Row 2 -->
+    <div class="overflow-hidden">
+      <div class="flex gap-6 animate-carousel-right">
+        <!-- Duplicate content to enable seamless loop -->
+        <template id="carousel-row-2">
+          <div class="testimonial-card">
+            <div class="flex mb-2 text-purple-500 text-lg">★★★★★</div>
+            <p class="text-gray-700 mb-4">Perfect for startups. I've been impressed by the continuous improvements. Great support and flexibility.</p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Annette Black" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="font-semibold text-gray-800">Annette Black</p>
+                <p class="text-sm text-gray-500">President of Sales</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="flex mb-2 text-purple-500 text-lg">★★★★★</div>
+            <p class="text-gray-700 mb-4">Collaborating remotely became 10x easier with Flowzy. Highly recommend it. The UI is fantastic and performance is smooth.</p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Cody Fisher" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="font-semibold text-gray-800">Cody Fisher</p>
+                <p class="text-sm text-gray-500">Project Manager</p>
+              </div>
+            </div>
+          </div>
+        </template>
+        <script>
+          const row2 = document.querySelector('.animate-carousel-right');
+          const row2Content = document.getElementById('carousel-row-2').content;
+          row2.appendChild(row2Content.cloneNode(true));
+          row2.appendChild(row2Content.cloneNode(true));
+        </script>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes carousel-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes carousel-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .animate-carousel-left {
+    animation: carousel-left 60s linear infinite;
+  }
+  .animate-carousel-right {
+    animation: carousel-right 60s linear infinite;
+  }
+  .testimonial-card {
+    width: 300px;
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #374151;
+    flex-shrink: 0;
+  }
+</style>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-24 px-6 bg-gradient-to-b from-white to-purple-50">
+  <div class="max-w-4xl mx-auto rounded-3xl bg-white shadow-xl p-10 overflow-hidden">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <div class="text-sm text-purple-600 font-medium mb-2 flex justify-center items-center gap-2">
+        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" /></svg>
+        Frequently Asked Questions
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Explore Common Questions<br>About Our Finance SaaS</h2>
+      <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Find answers to frequently asked questions about our platform. Learn about features, security, support options, and more.</p>
+    </div>
+
+    <!-- Accordion Container -->
+    <div class="space-y-4 text-left" id="faq-accordion">
+      <!-- Item 1 -->
+      <div class="bg-gray-50 shadow-sm rounded-xl overflow-hidden transition-all duration-300">
+        <button class="w-full flex justify-between items-center px-5 py-4 text-left font-medium text-gray-800 focus:outline-none" data-toggle>
+          Can I upgrade or downgrade my plan at any time?
+          <svg class="w-5 h-5 text-purple-600 transform transition-transform" data-icon fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-content px-5 text-gray-600 transition-all duration-500 ease-in-out max-h-0 overflow-hidden" data-content>
+          <p class="py-4">Yes, you can change your plan at any time through your account settings.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-gray-50 shadow-sm rounded-xl overflow-hidden transition-all duration-300">
+        <button class="w-full flex justify-between items-center px-5 py-4 text-left font-medium text-gray-800 focus:outline-none" data-toggle>
+          Is there a free trial available?
+          <svg class="w-5 h-5 text-purple-600 transform transition-transform" data-icon fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-content px-5 text-gray-600 transition-all duration-500 ease-in-out max-h-0 overflow-hidden" data-content>
+          <p class="py-4">Yes, we offer a 14-day free trial for all our plans. You can sign up without any commitment and explore all the features.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Accordion Script with animated height -->
+<script>
+  document.querySelectorAll('[data-toggle]').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('[data-icon]');
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+      document.querySelectorAll('[data-content]').forEach(el => {
+        el.style.maxHeight = null;
+        el.previousElementSibling.querySelector('[data-icon]').classList.remove('rotate-180');
+      });
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script>
+
+<style>
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+</style>
+
+
+<!-- Call to Action -->
+<section id="cta" class="text-center py-28 px-6 bg-gradient-to-b from-white to-purple-50">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-sm text-purple-600 font-medium mb-4 inline-block px-4 py-1 bg-white shadow rounded-full">
+      Take Your Project Management Journey
+    </div>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+      Ready to Elevate Your<br>Workflow Beyond?
+    </h2>
+    <p class="text-gray-600 mt-6 mb-10">
+      Unlock your potential with our exclusive platform. Sign up today to secure your spot
+      and be the first to experience seamless project management for your startup.
+    </p>
+    <a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="inline-block px-8 py-4 text-white font-semibold rounded-full bg-gradient-to-r from-purple-600 to-purple-800 shadow-lg hover:from-purple-700 hover:to-purple-900 transition">
+      Get Started →
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-purple-50 to-white text-sm text-gray-600">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-5 gap-8">
+    <!-- Logo -->
+    <div class="md:col-span-1">
+      <h1 class="text-xl font-bold text-purple-700 mb-4">uTime</h1>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-gray-800 font-semibold mb-3">Quick Links</h4>
+      <ul class="space-y-2">
+        <li><a href="#hero" class="hover:text-purple-600">Home</a></li>
+        <li><a href="#features" class="hover:text-purple-600">features</a></li>
+        <li><a href="#faq" class="hover:text-purple-600">FAQ</a></li>
+        <li><a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="hover:text-purple-600">Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h4 class="text-gray-800 font-semibold mb-3">Support</h4>
+      <ul class="space-y-2">
+        <li><a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="hover:text-purple-600">Help Center</a></li>
+        <li><a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="hover:text-purple-600">Getting Started</a></li>
+        <li><a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="hover:text-purple-600">Contact Support</a></li>
+        <li><a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="hover:text-purple-600">Community Forums</a></li>
+        <li><a href="https://upc-paxtech.github.io/Frontend-Web-Applications/" class="hover:text-purple-600">Documentation</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div>
+      <h4 class="text-gray-800 font-semibold mb-3">Contact Us</h4>
+      <ul class="space-y-2">
+        <li>📧 utime@company.com</li>
+        <li>📞 (+51) 979 447 361</li>
+        <li>📍 Lima Lima Miraflores<br>Peru</li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h4 class="text-gray-800 font-semibold mb-3">Social</h4>
+      <div class="flex space-x-3">
+        <a href="https://www.facebook.com/utime_upc" class="bg-purple-600 hover:bg-purple-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/utime_upc" class="bg-purple-600 hover:bg-purple-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/404/" class="bg-purple-600 hover:bg-purple-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.youtube.com/utime_upc" class="bg-purple-600 hover:bg-purple-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/utime_upc" class="bg-purple-600 hover:bg-purple-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center border-t border-gray-200 py-4 text-xs text-gray-500">
+    © 2025 uTime. All rights reserved.
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </body>
+
 </html>
