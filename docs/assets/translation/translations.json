@@ -1,5 +1,10 @@
 {
     "en": {
+        "lang_english": "English",
+        "lang_spanish": "Spanish",
+        "title": "Welcome",
+        "description": "This is the English description",
+        "get_started": "Get Started",
         "lang": {
             "english": "English",
             "spanish": "Spanish",
@@ -214,6 +219,11 @@
         }
     },
     "es": {
+        "lang_english": "Inglés",
+        "lang_spanish": "Español",
+        "title": "Bienvenido",
+        "description": "Esta es la descripción en español",
+        "get_started": "Empezar",
         "lang": {
             "english": "Inglés",
             "spanish": "Español",
