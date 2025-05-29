@@ -1,134 +1,430 @@
 {
     "en": {
-        "home": "Home",
-        "pricing": "Pricing",
-        "about_us": "About Us",
-        "contact_us": "Contact Us",
-        "sign_in": "Sign in",
-        "register": "Register",
-        "start": "Start today!",
-        "smart_calendar": "Smart Calendar",
-        "auto_reminders": "Automatic Reminders",
-        "reviews_ratings": "Reviews & Ratings",
-        "stylist_profiles": "Stylist Profiles",
-        "secure_payment": "Secure Payment",
-        "look_book": "Look & book",
-        "glow_business": "Glow up your business",
-        "journey_start": "The journey starts here",
-        "step1": "Look for your favorite stylist",
-        "step1_desc": "Browse our directory of professional stylists and find your perfect match.",
-        "step2": "Check their availability",
-        "step2_desc": "View real-time availability and select a time that works for you.",
-        "step3": "Save the date and choose payment",
-        "step3_desc": "Secure your appointment with our easy booking system and payment options.",
-        "step4": "You're good to go. Enjoy!",
-        "step4_desc": "Sit back and relax - we'll send you reminders before your appointment.",
-        "start_now_btn": "Start now!",
-        "complaints": "Complaints book",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "cookies": "Cookies Policy",
-        "help": "Help",
-        "faq": "Frequent Questions",
-        "hero_heading": "Your Time is Gold Let uTime Make It Shine",
-        "hero_subtext": "Professional scheduling for professionals like you. Impress your clients, simplify your day, and elevate your service",
-        "start_today": "Start today!",
-        "smart_calendar_title": "Smart Calendar",
-        "smart_calendar_desc": "Manage your appointments with an intuitive calendar designed for your weekly flow. Add, edit, reschedule, and view your whole week at a glance - no confusion, no clutter.",
-
-        "auto_reminders_title": "Automatic Reminders",
-        "auto_reminders_desc": "uTime sends reminders to your clients automatically - so they never forget their appointment and you never lose time or income.",
-
-        "reviews_ratings_title": "Reviews & Ratings",
-        "reviews_ratings_desc": "Collect feedback from clients after each session. Build your reputation with verified reviews and showcase your excellence to future clients.",
-
-        "stylist_profiles_title": "Stylist Profiles",
-        "stylist_profiles_desc": "Create a personalized profile with your bio, specialties, pricing, and portfolio. Help clients get to know you before they book - and build trust from the first click.",
-
-        "secure_payment_title": "Secure Payment",
-        "secure_payment_desc": "Accept payments online with confidence. uTime offers seamless checkout options for clients and ensures your transactions are encrypted and secure.",
-        "look_book_title": "Look & book",
-        "look_book_desc": "Explore talented stylists and barbers near you, view their work, read reviews, and book in just a few taps. Smooth, fast, and totally stress-free.",
-        "book_now": "Book now",
-
-        "glow_business_title": "Glow up your business",
-        "glow_business_desc": "From appointment scheduling to secure payments and building your online presence. All in one sleek, easy-to-use platform.",
-        "start_now": "Start now",
-        "journey_title": "The journey starts here",
-        "journey_step1_title": "Look for your favorite stylist",
-        "journey_step1_desc": "Browse our directory of professional stylists and find your perfect match.",
-        "journey_step2_title": "Check their availability",
-        "journey_step2_desc": "View real-time availability and select a time that works for you.",
-        "journey_step3_title": "Save the date and choose payment",
-        "journey_step3_desc": "Secure your appointment with our easy booking system and payment options.",
-        "journey_step4_title": "You're good to go. Enjoy!",
-        "journey_step4_desc": "Sit back and relax - we'll send you reminders before your appointment.",
-        "journey_start_now": "Start now!"
+        "lang": {
+            "english": "English",
+            "spanish": "Spanish",
+            "selected": "English"
+        },
+        "navbar": {
+            "features": "Features",
+            "howitworks": "How it Works",
+            "pricing": "Pricing",
+            "testimonials": "Testimonials",
+            "faq": "FAQ",
+            "get_started": "Get Started"
+        },
+        "hero": {
+            "title1": "Skip the Calls",
+            "title2": "Book in Real Time",
+            "subtitle": "Let your clients reserve their appointment instantly. Manage availability in real time and simplify your day.",
+            "cta": "Start for Free →"
+        },
+        "features": {
+            "section_title": "Features",
+            "feature1": {
+                "title": "Smart Appointment Management in Real Time",
+                "description": "Manage all your bookings with a visual calendar that updates in real time. Your team, your services, and your schedule — all in perfect sync.",
+                "items": [
+                    "Interactive Calendar",
+                    "Automatic Duration",
+                    "Simplified Booking",
+                    "Staff Control"
+                ]
+            },
+            "feature2": {
+                "title": "Payments & Full Service Management",
+                "description": "Control your salon from one single dashboard: services, bookings, payments, and client interactions — simplified and secure.",
+                "items": [
+                    "Secure Payments",
+                    "Service Setup",
+                    "Booking Dashboard",
+                    "Automated Reminders"
+                ]
+            },
+            "feature3": {
+                "title": "Full Control with Custom Profiles",
+                "description": "Each salon or barber gets a fully customizable profile to showcase services, manage their team, and control how clients see them — all in one place.",
+                "items": [
+                    "Staff Management",
+                    "Customizable Profiles",
+                    "Portfolio Showcase",
+                    "Business Settings"
+                ]
+            },
+            "cta": "Get Started →"
+        },
+        "how_it_works": {
+            "title": "How it works for providers",
+            "subtitle": "Follow these simple steps to efficiently manage your business and offer a professional experience to your clients.",
+            "steps": [
+                {
+                    "title": "Create your account",
+                    "description": "Register easily by entering your basic information. Access your personalized dashboard to start managing your business."
+                },
+                {
+                    "title": "Add and manage your workers",
+                    "description": "Register your team, assign their schedules and control their agendas from one place."
+                },
+                {
+                    "title": "Define your services",
+                    "description": "Create and customize the services you offer. Set duration, price and assign specific workers to each one."
+                },
+                {
+                    "title": "Customize your profile",
+                    "description": "Add photos, description, address, payment methods and more to build a professional and reliable profile."
+                },
+                {
+                    "title": "View your calendar",
+                    "description": "Access an overview of the calendar of all your workers and manage your agenda efficiently."
+                }
+            ],
+            "final_cta": {
+                "title": "Ready to manage your business like never before?",
+                "description": "Optimize your workflow, connect with customers and improve your professional presence with our platform.",
+                "button": "Start now →"
+            }
+        },
+        "pricing": {
+            "section_title": "Pricing",
+            "title": "Flexible Plans for Every Salon Stage",
+            "subtitle": "Choose the right tools to grow your beauty business — start free, upgrade anytime.",
+            "plans": [
+                {
+                    "name": "Essential",
+                    "description": "Start simple and stay organized",
+                    "price": "Free",
+                    "features": [
+                        "Basic smart calendar",
+                        "Client booking page",
+                        "Reviews & ratings",
+                        "Stylist profiles",
+                        "2 stylist accounts"
+                    ],
+                    "cta": "Get Started"
+                },
+                {
+                    "name": "ProStyle",
+                    "description": "Level up your salon with smart tools",
+                    "price": "S/69.9/month",
+                    "features": [
+                        "Advanced calendar sync",
+                        "WhatsApp reminders",
+                        "Up to 5 stylists",
+                        "Performance tracking",
+                        "Priority support"
+                    ],
+                    "cta": "Start Free Trial"
+                },
+                {
+                    "name": "Deluxe Studio",
+                    "description": "All-in-one power for premium salons",
+                    "price": "S/129.9/month",
+                    "features": [
+                        "Full calendar control",
+                        "Unlimited reminders",
+                        "Unlimited stylists",
+                        "Advanced analytics",
+                        "VIP support"
+                    ],
+                    "cta": "Contact Us"
+                }
+            ]
+        },
+        "testimonials": {
+            "title": "Trusted by more than 100+ beauty businesses",
+            "subtitle": "Learn how uTime has transformed their way of working and why it is the ideal tool for their business.",
+            "testimonials": [
+                {
+                    "text": "Since we started using uTime, appointment organization has been impeccable. Our clients are happier and the whole team works more calmly.",
+                    "author": "Luis Paredes",
+                    "role": "Owner of Barbería El Corte Fino"
+                },
+                {
+                    "text": "With uTime we save hours every week in salon management. Everything is more fluid, from shifts to staff control.",
+                    "author": "María Fernanda Ríos",
+                    "role": "Manager at Salón Glamour"
+                },
+                {
+                    "text": "uTime allows me to see statistics and better control team productivity. It's exactly what we needed at our beauty center.",
+                    "author": "Karla Mendoza",
+                    "role": "Manager of Estética Belle Femme"
+                },
+                {
+                    "text": "I recommend uTime to all barber colleagues. It's easy to use, powerful and makes the business run like clockwork.",
+                    "author": "Ricardo Torres",
+                    "role": "Head of Barbería Urban Style"
+                }
+            ]
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Here you'll find answers to the most common questions about our platform for barbershops and beauty salons.",
+            "questions": [
+                {
+                    "question": "Is uTime suitable for small barbershops or just for large businesses?",
+                    "answer": "uTime is designed to adapt to businesses of any size, from solo barbers to salons with multiple team members."
+                },
+                {
+                    "question": "Do I need an internet connection to use uTime?",
+                    "answer": "Yes, uTime is a cloud-based platform, so it requires an internet connection to work properly and sync data in real time."
+                },
+                {
+                    "question": "Does uTime help manage staff schedules and shifts?",
+                    "answer": "Absolutely! uTime is designed to make it easy to organize shifts, manage schedules, and track staff attendance."
+                },
+                {
+                    "question": "Is there a free trial to try uTime?",
+                    "answer": "Yes, we offer a 14-day free trial so you can explore all uTime features without any commitment."
+                },
+                {
+                    "question": "Does uTime help me manage client appointments?",
+                    "answer": "Yes. uTime includes an intelligent booking system that allows your clients to book online and receive automatic reminders."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Ready to transform your daily operations?",
+            "subtitle": "Discover how uTime helps you manage appointments, shifts, and clients with ease. Start today and optimize your time like never before.",
+            "button": "Start for Free →"
+        },
+        "footer": {
+            "quick_links": "Quick Links",
+            "support": "Support",
+            "contact": "Contact Us",
+            "social": "Social",
+            "links": [
+                "Home",
+                "Features",
+                "FAQ",
+                "Support"
+            ],
+            "support_links": [
+                "Help Center",
+                "Getting Started",
+                "Contact Support",
+                "Community Forums",
+                "Documentation"
+            ],
+            "contact_info": [
+                "utime@company.com",
+                "(+51) 979 447 361",
+                "Lima Lima Miraflores Peru"
+            ],
+            "copyright": "© 2025 uTime. All rights reserved."
+        }
     },
     "es": {
-        "home": "Inicio",
-        "pricing": "Precios",
-        "about_us": "Sobre Nosotros",
-        "contact_us": "Contáctanos",
-        "sign_in": "Iniciar sesión",
-        "register": "Registrarse",
-        "start": "¡Empieza hoy!",
-        "smart_calendar": "Calendario Inteligente",
-        "auto_reminders": "Recordatorios Automáticos",
-        "reviews_ratings": "Reseñas y Valoraciones",
-        "stylist_profiles": "Perfiles de Estilistas",
-        "secure_payment": "Pago Seguro",
-        "look_book": "Explora y reserva",
-        "glow_business": "Impulsa tu negocio",
-        "journey_start": "El viaje comienza aquí",
-        "step1": "Busca tu estilista favorito",
-        "step1_desc": "Explora nuestro directorio de estilistas profesionales y encuentra tu mejor opción.",
-        "step2": "Revisa su disponibilidad",
-        "step2_desc": "Consulta su disponibilidad en tiempo real y elige el horario que más te convenga.",
-        "step3": "Guarda la cita y elige el pago",
-        "step3_desc": "Asegura tu cita con nuestro sistema de reservas y opciones de pago fáciles.",
-        "step4": "¡Todo listo, disfruta!",
-        "step4_desc": "Relájate, te enviaremos recordatorios antes de tu cita.",
-        "start_now_btn": "¡Comienza ahora!",
-        "complaints": "Libro de Reclamaciones",
-        "terms": "Términos y Condiciones",
-        "privacy": "Política de Privacidad",
-        "cookies": "Política de Cookies",
-        "help": "Ayuda",
-        "faq": "Preguntas Frecuentes",
-        "hero_heading": "Tu tiempo es oro<br>Deja que uTime lo haga brillar",
-        "hero_subtext": "Agenda profesional para profesionales como tú. Impresiona a tus clientes, simplifica tu día y eleva tu servicio.",
-        "start_today": "¡Empieza hoy!",
-        "smart_calendar_title": "Calendario Inteligente",
-        "smart_calendar_desc": "Gestiona tus citas con un calendario intuitivo diseñado para tu flujo semanal. Agrega, edita, reprograma y visualiza toda tu semana de un vistazo, sin confusión ni desorden.",
-
-        "auto_reminders_title": "Recordatorios Automáticos",
-        "auto_reminders_desc": "uTime envía recordatorios a tus clientes automáticamente, así nunca olvidan su cita y tú no pierdes tiempo ni ingresos.",
-
-        "reviews_ratings_title": "Reseñas y Valoraciones",
-        "reviews_ratings_desc": "Recoge opiniones de los clientes después de cada sesión. Construye tu reputación con reseñas verificadas y muestra tu excelencia a futuros clientes.",
-
-        "stylist_profiles_title": "Perfiles de Estilistas",
-        "stylist_profiles_desc": "Crea un perfil personalizado con tu biografía, especialidades, precios y portafolio. Ayuda a los clientes a conocerte antes de reservar y genera confianza desde el primer clic.",
-
-        "secure_payment_title": "Pago Seguro",
-        "secure_payment_desc": "Acepta pagos en línea con confianza. uTime ofrece opciones de pago sin inconvenientes para los clientes y garantiza que tus transacciones estén encriptadas y seguras.",
-        "look_book_title": "Explora y reserva",
-        "look_book_desc": "Explora talentosos estilistas y barberos cerca de ti, mira su trabajo, lee reseñas y reserva en solo unos pocos clics. Rápido, sencillo y sin estrés.",
-        "book_now": "Reserva ahora",
-
-        "glow_business_title": "Haz crecer tu negocio",
-        "glow_business_desc": "Desde la programación de citas hasta pagos seguros y la construcción de tu presencia en línea. Todo en una sola plataforma elegante y fácil de usar.",
-        "start_now": "Comienza ahora",
-        "journey_title": "El viaje comienza aquí",
-        "journey_step1_title": "Busca tu estilista favorito",
-        "journey_step1_desc": "Explora nuestro directorio de estilistas profesionales y encuentra tu pareja perfecta.",
-        "journey_step2_title": "Revisa su disponibilidad",
-        "journey_step2_desc": "Consulta la disponibilidad en tiempo real y selecciona un horario que se ajuste a ti.",
-        "journey_step3_title": "Guarda la cita y elige el método de pago",
-        "journey_step3_desc": "Asegura tu cita con nuestro sencillo sistema de reservas y opciones de pago.",
-        "journey_step4_title": "Todo listo, ¡disfruta!",
-        "journey_step4_desc": "Relájate, te enviaremos recordatorios antes de tu cita.",
-        "journey_start_now": "¡Comienza ahora!"
+        "lang": {
+            "english": "Inglés",
+            "spanish": "Español",
+            "selected": "Español"
+        },
+        "navbar": {
+            "features": "Características",
+            "howitworks": "Cómo funciona",
+            "pricing": "Precios",
+            "testimonials": "Testimonios",
+            "faq": "Preguntas",
+            "get_started": "Empezar"
+        },
+        "hero": {
+            "title1": "Olvídate de las llamadas",
+            "title2": "Reserva en tiempo real",
+            "subtitle": "Permite que tus clientes reserven sus citas al instante. Gestiona la disponibilidad en tiempo real y simplifica tu día.",
+            "cta": "Empezar gratis →"
+        },
+        "features": {
+            "section_title": "Características",
+            "feature1": {
+                "title": "Gestión inteligente de citas en tiempo real",
+                "description": "Administra todas tus reservas con un calendario visual que se actualiza en tiempo real. Tu equipo, tus servicios y tu horario, todo en perfecta sincronía.",
+                "items": [
+                    "Calendario interactivo",
+                    "Duración automática",
+                    "Reserva simplificada",
+                    "Control de personal"
+                ]
+            },
+            "feature2": {
+                "title": "Pagos y gestión completa de servicios",
+                "description": "Controla tu salón desde un solo panel: servicios, reservas, pagos e interacciones con clientes, todo simplificado y seguro.",
+                "items": [
+                    "Pagos seguros",
+                    "Configuración de servicios",
+                    "Panel de reservas",
+                    "Recordatorios automáticos"
+                ]
+            },
+            "feature3": {
+                "title": "Control total con perfiles personalizados",
+                "description": "Cada salón o barbero obtiene un perfil completamente personalizable para mostrar servicios, administrar su equipo y controlar cómo lo ven los clientes, todo en un solo lugar.",
+                "items": [
+                    "Gestión de personal",
+                    "Perfiles personalizables",
+                    "Muestra de portafolio",
+                    "Configuración del negocio"
+                ]
+            },
+            "cta": "Empezar →"
+        },
+        "how_it_works": {
+            "title": "Cómo funciona para los proveedores",
+            "subtitle": "Sigue estos simples pasos para gestionar eficientemente tu negocio y ofrecer una experiencia profesional a tus clientes.",
+            "steps": [
+                {
+                    "title": "Crea tu cuenta",
+                    "description": "Regístrate fácilmente ingresando tu información básica. Accede a tu panel personalizado para comenzar a gestionar tu negocio."
+                },
+                {
+                    "title": "Agrega y gestiona a tus trabajadores",
+                    "description": "Registra a tu equipo, asigna sus horarios y controla sus agendas desde un solo lugar."
+                },
+                {
+                    "title": "Define tus servicios",
+                    "description": "Crea y personaliza los servicios que ofreces. Establece duración, precio y asigna trabajadores específicos a cada uno."
+                },
+                {
+                    "title": "Personaliza tu perfil",
+                    "description": "Agrega fotos, descripción, dirección, métodos de pago y más para construir un perfil profesional y confiable."
+                },
+                {
+                    "title": "Visualiza tu calendario",
+                    "description": "Accede a una vista general del calendario de todos tus trabajadores y gestiona tu agenda con eficiencia."
+                }
+            ],
+            "final_cta": {
+                "title": "¿Listo para gestionar tu negocio como nunca antes?",
+                "description": "Optimiza tu flujo de trabajo, conecta con clientes y mejora tu presencia profesional con nuestra plataforma.",
+                "button": "Comienza ahora →"
+            }
+        },
+        "pricing": {
+            "section_title": "Precios",
+            "title": "Planes flexibles para cada etapa de tu salón",
+            "subtitle": "Elige las herramientas adecuadas para hacer crecer tu negocio de belleza — empieza gratis, actualiza cuando quieras.",
+            "plans": [
+                {
+                    "name": "Esencial",
+                    "description": "Comienza de manera simple y mantente organizado",
+                    "price": "Gratis",
+                    "features": [
+                        "Calendario inteligente básico",
+                        "Página de reserva de clientes",
+                        "Reseñas y calificaciones",
+                        "Perfiles de estilistas",
+                        "2 cuentas de estilistas"
+                    ],
+                    "cta": "Empezar"
+                },
+                {
+                    "name": "ProStyle",
+                    "description": "Mejora tu salón con herramientas inteligentes",
+                    "price": "S/69.9/mes",
+                    "features": [
+                        "Sincronización avanzada de calendario",
+                        "Recordatorios por WhatsApp",
+                        "Hasta 5 estilistas",
+                        "Seguimiento de desempeño",
+                        "Soporte prioritario"
+                    ],
+                    "cta": "Prueba Gratis"
+                },
+                {
+                    "name": "Deluxe Studio",
+                    "description": "Todo el poder para salones premium",
+                    "price": "S/129.9/mes",
+                    "features": [
+                        "Control total del calendario",
+                        "Recordatorios ilimitados",
+                        "Estilistas ilimitados",
+                        "Analíticas avanzadas",
+                        "Soporte VIP"
+                    ],
+                    "cta": "Contáctanos"
+                }
+            ]
+        },
+        "testimonials": {
+            "title": "Confiado por más de 100+ negocios de belleza",
+            "subtitle": "Conoce cómo uTime ha transformado su forma de trabajar y por qué es la herramienta ideal para su negocio.",
+            "testimonials": [
+                {
+                    "text": "Desde que usamos uTime, la organización de las citas es impecable. Nuestros clientes están más felices y todo el equipo trabaja más tranquilo.",
+                    "author": "Luis Paredes",
+                    "role": "Dueño de Barbería El Corte Fino"
+                },
+                {
+                    "text": "Con uTime ahorramos horas cada semana en la gestión del salón. Todo es más fluido, desde los turnos hasta el control del personal.",
+                    "author": "María Fernanda Ríos",
+                    "role": "Administradora en Salón Glamour"
+                },
+                {
+                    "text": "uTime me permite ver estadísticas y controlar mejor la productividad del equipo. Es justo lo que necesitábamos en nuestro centro de estética.",
+                    "author": "Karla Mendoza",
+                    "role": "Gerente de Estética Belle Femme"
+                },
+                {
+                    "text": "Recomiendo uTime a todos los colegas barberos. Es fácil de usar, potente y hace que el negocio funcione como reloj suizo.",
+                    "author": "Ricardo Torres",
+                    "role": "Jefe de Barbería Urban Style"
+                }
+            ]
+        },
+        "faq": {
+            "title": "Preguntas frecuentes",
+            "subtitle": "Aquí encontrarás respuestas a las preguntas más comunes sobre nuestra plataforma para barberías y salones de belleza.",
+            "questions": [
+                {
+                    "question": "¿uTime es adecuado para pequeñas barberías o solo para grandes negocios?",
+                    "answer": "uTime está diseñado para adaptarse a negocios de cualquier tamaño, desde barberos independientes hasta salones con múltiples miembros en el equipo."
+                },
+                {
+                    "question": "¿Necesito conexión a internet para usar uTime?",
+                    "answer": "Sí, uTime es una plataforma basada en la nube, por lo que requiere conexión a internet para funcionar correctamente y sincronizar datos en tiempo real."
+                },
+                {
+                    "question": "¿uTime ayuda a gestionar horarios y turnos del personal?",
+                    "answer": "¡Absolutamente! uTime está diseñado para facilitar la organización de turnos, la gestión de horarios y el seguimiento de la asistencia del personal."
+                },
+                {
+                    "question": "¿Hay una prueba gratuita para probar uTime?",
+                    "answer": "Sí, ofrecemos una prueba gratuita de 14 días para que puedas explorar todas las funciones de uTime sin compromiso."
+                },
+                {
+                    "question": "¿uTime me ayuda a gestionar citas de clientes?",
+                    "answer": "Sí. uTime incluye un sistema de reservas inteligente que permite a tus clientes reservar en línea y recibir recordatorios automáticos."
+                }
+            ]
+        },
+        "cta": {
+            "title": "¿Listo para transformar tus operaciones diarias?",
+            "subtitle": "Descubre cómo uTime te ayuda a gestionar citas, turnos y clientes con facilidad. Comienza hoy y optimiza tu tiempo como nunca antes.",
+            "button": "Empieza gratis →"
+        },
+        "footer": {
+            "quick_links": "Enlaces rápidos",
+            "support": "Soporte",
+            "contact": "Contáctanos",
+            "social": "Redes",
+            "links": [
+                "Inicio",
+                "Características",
+                "Preguntas",
+                "Soporte"
+            ],
+            "support_links": [
+                "Centro de ayuda",
+                "Cómo empezar",
+                "Contactar soporte",
+                "Foros comunitarios",
+                "Documentación"
+            ],
+            "contact_info": [
+                "utime@empresa.com",
+                "(+51) 979 447 361",
+                "Lima Lima Miraflores Perú"
+            ],
+            "copyright": "© 2025 uTime. Todos los derechos reservados."
+        }
     }
 }
