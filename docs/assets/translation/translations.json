@@ -140,7 +140,8 @@
         "footer_contact_info1": "utime@company.com",
         "footer_contact_info2": "(+51) 979 447 361",
         "footer_contact_info3": "Lima Lima Miraflores Peru",
-        "footer_copyright": "© 2025 uTime. All rights reserved."
+        "footer_copyright": "© 2025 uTime. All rights reserved.",
+        "tag": "Take your barbershop or salon to the next level"
     },
     "es": {
         "lang_english": "Inglés",
@@ -283,6 +284,7 @@
         "footer_contact_info1": "utime@empresa.com",
         "footer_contact_info2": "(+51) 979 447 361",
         "footer_contact_info3": "Lima Lima Miraflores Perú",
-        "footer_copyright": "© 2025 uTime. Todos los derechos reservados."
+        "footer_copyright": "© 2025 uTime. Todos los derechos reservados.",
+        "tag": "Lleva tu barbería o peluquería al siguiente nivel"
     }
 }
