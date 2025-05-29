@@ -719,7 +719,7 @@
 
       <!-- Item 1 -->
       <div class="bg-gray-50 shadow-sm rounded-xl overflow-hidden transition-all duration-300">
-        <button class="w-full flex justify-between items-center px-5 py-4 text-left font-medium text-gray-800 focus:outline-none" data-toggle data-i18n="faq_question1">
+        <button class="w-full flex justify-between items-center px-5 py-4 text-left font-medium text-gray-800 focus:outline-none" data-i18n="faq_question1" data-toggle>
           Is uTime suitable for small barbershops or just for large businesses?
           <svg class="w-5 h-5 text-purple-600 transform transition-transform" data-icon fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -788,7 +788,6 @@
 
 
 
-<!-- Accordion Script with animated height -->
 <script>
   document.querySelectorAll('[data-toggle]').forEach(button => {
     button.addEventListener('click', () => {
@@ -796,11 +795,14 @@
       const icon = button.querySelector('[data-icon]');
       const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
 
+      // Cierra todos los contenidos abiertos
       document.querySelectorAll('[data-content]').forEach(el => {
         el.style.maxHeight = null;
-        el.previousElementSibling.querySelector('[data-icon]').classList.remove('rotate-180');
+        const iconInside = el.previousElementSibling.querySelector('[data-icon]');
+        iconInside && iconInside.classList.remove('rotate-180');
       });
 
+      // Si no estaba abierto, lo abre
       if (!isOpen) {
         content.style.maxHeight = content.scrollHeight + 'px';
         icon.classList.add('rotate-180');
@@ -810,10 +812,17 @@
 </script>
 
 <style>
+  .faq-content {
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    max-height: 0;
+  }
+
   .rotate-180 {
     transform: rotate(180deg);
   }
 </style>
+
 
 
 <!-- Call to Action -->
